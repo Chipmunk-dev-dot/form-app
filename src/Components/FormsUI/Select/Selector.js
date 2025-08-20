@@ -25,7 +25,13 @@ const Selector = ({ name, options, ...otherProps }) => {
     configSelect.helperText = meta.error;
   }
   return (
-    <TextField {...configSelect}>
+    <TextField sx={{backgroundColor: "#ffffff34", borderRadius: '8px', '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#bdbdbd'
+
+      },
+      
+    }}}{...configSelect}>
       {Object.keys(options)?.map((item, pos) => {
         return (
           <MenuItem key={pos} value={item}>
