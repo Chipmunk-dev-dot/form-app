@@ -26,9 +26,9 @@ if(meta && meta.touched && meta.error){
 }
   return (
    <FormControl  {...configFormControl}>
-    <FormLabel component={"legend"}>{legend}</FormLabel>
+    <FormLabel sx={{color:'white'}} component={"legend"} >{legend}</FormLabel>
     <FormGroup> 
-        <FormControlLabel control={<Checkbox  {...configCheckbox}/>} label={label}/>
+        <FormControlLabel control={<Checkbox sx={{ color: 'white'}} {...configCheckbox}/>} label={label}/>
 
     </FormGroup>
    </FormControl>
