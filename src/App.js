@@ -9,6 +9,7 @@ import {
   Card,
   Container,
   Grid,
+  Input,
   Snackbar,
   Typography,
 } from "@mui/material";
@@ -25,7 +26,11 @@ import {
   useQuery,
   useQueryClient,
 } from "@tanstack/react-query";
-import bgImg from '../src/Images/backgrownd.png';
+import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
+import PersonSharpIcon from '@mui/icons-material/PersonSharp';
+import HomeSharpIcon from '@mui/icons-material/HomeSharp';
+import CalendarMonthSharpIcon from '@mui/icons-material/CalendarMonthSharp';
+import bgImg from '../src/Images/Airliner (1920x1080).jpg';
 import axios from "axios";
 
 const INITIAL_FORM_STATE = {
@@ -109,13 +114,13 @@ function App() {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat"
       }}
-      t
+      
     >
-      <AppBar sx={{ padding: 2 }}>
-        <Typography variant="h5">BOOKING FORM</Typography>
+      <AppBar sx={{ padding: 2,alignItems:"center", backgroundColor:"black" , opacity: 0.7}}>
+        <Typography variant="h4">BOOKING FORM <FlightTakeoffIcon fontSize="large" color="inherit"/></Typography>
       </AppBar>
       <Box sx={{p:8,display:'flex',alignItems:'center',justifyContent:'center'}}>
-        <Card sx={{p:5}}>
+        <Card sx={{p:5, backgroundColor: 'black', opacity: 0.85, color: 'white'}}>
         <Formik
           initialValues={{
             ...INITIAL_FORM_STATE,
@@ -131,11 +136,12 @@ function App() {
           <Form>
             <Container>
               <Grid container spacing={2}>
-                <Grid size={12} sx={{ p: 1 }}>
-                  <Typography>Your details</Typography>
+                <Grid size={12}  sx={{display: "flex", alignItems:"center",padding: 1}}>
+                  < PersonSharpIcon fontSize="large" sx={{mr:2}}/>
+                  <Typography variant="h5">Your details </Typography>
                 </Grid>
                 <Grid size={6}>
-                  <TextFieldW name="first_name" label={"First Name"} />
+                  <TextFieldW  name="first_name" label={"First Name"} />
                 </Grid>
                 <Grid size={6}>
                   <TextFieldW name="last_name" label={"Last Name"} />
@@ -149,8 +155,9 @@ function App() {
                   <TextFieldW name="phone" label={"Phone Number"} />
                 </Grid>
 
-                <Grid size={12} sx={{ p: 2 }}>
-                  <Typography> Address </Typography>
+                <Grid size={12} sx={{display:"flex", alignItems:"center", paddingTop:3}}>
+                  <HomeSharpIcon fontSize="large" sx={{mr:2}}/>
+                  <Typography variant="h5"> Address </Typography>
                 </Grid>
 
                 <Grid size={12}>
@@ -176,8 +183,9 @@ function App() {
                   />
                 </Grid>
 
-                <Grid size={12} sx={{ p: 2 }}>
-                  <Typography> Booking information</Typography>
+                <Grid size={12} sx={{display:"flex", alignItems:"center", paddingTop:3}}>
+                  <CalendarMonthSharpIcon fontSize="large" sx={{mr: 2}} />
+                  <Typography variant="h5"> Booking information</Typography>
                 </Grid>
 
                 <Grid size={6}>
@@ -192,10 +200,12 @@ function App() {
 
                 <Grid size={12}>
                   <TextFieldW
+                  
                     name="message"
                     label="Message"
                     multiline={true}
                     rows={4}
+                    
                   />
                 </Grid>
 
@@ -204,6 +214,8 @@ function App() {
                     name="termsOfService"
                     legend={"Terms Of Service"}
                     label="I agree"
+                    
+                    
                   />
                 </Grid>
 
