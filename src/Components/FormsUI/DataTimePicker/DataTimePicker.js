@@ -16,6 +16,7 @@ const DataTimePicker= ({name, ...otherProps}) =>{
         InputLabelProps: {
             shrink: true
         }
+        
     };
 
 
@@ -25,7 +26,14 @@ const DataTimePicker= ({name, ...otherProps}) =>{
     }
 
 
-    return(<TextField
+    return(<TextField sx={{backgroundColor: "#ffffff36", borderRadius: '8px','& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#bdbdbd'
+
+      },
+      
+     
+    }}}
     {...configDataTimePicker}
     
     
