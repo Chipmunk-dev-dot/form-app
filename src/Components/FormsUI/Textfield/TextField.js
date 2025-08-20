@@ -9,6 +9,9 @@ const TextFieldW = ({ name, ...otherProps }) => {
     ...otherProps,
     fullWidth: true,
     variant: "outlined",
+    
+  
+    
 
   };
   //we are going to check if the meta object contains meta.touched and meta.error
@@ -16,7 +19,16 @@ const TextFieldW = ({ name, ...otherProps }) => {
     configTextfield.error=true;
     configTextfield.helperText =meta.error;//for the error message
   }
-  return <TextField {...configTextfield} />;
+  return <TextField sx={{ backgroundColor: "#ffffff34", borderRadius: '8px', '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#bdbdbd'
+
+      },
+      
+      input: {
+      color: 'white', // 🔸 Input text color
+    },
+    },}} {...configTextfield} />;
 };
 
 export default TextFieldW;
